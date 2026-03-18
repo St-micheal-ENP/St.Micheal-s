@@ -1301,6 +1301,11 @@ const SuperAdmin = () => {
                         <input type="file" onChange={handleImageChange} accept="image/*" required />
                       </div>
                     </div>
+                    {imagePreview && (
+                      <div className="event-preview shadow-premium">
+                           <OptimizedImage src={imagePreview || 'https://placehold.co/600x400?text=Upload+Image'} alt="Preview" />
+                        </div>
+                    )}
                     <button type="submit" className="add-event-btn shadow-premium">{t("Upload Event", "நிகழ்வை பதிவேற்றவும்")}</button>
                   </form>
                 </div>
@@ -1313,7 +1318,7 @@ const SuperAdmin = () => {
                   </div>
                   <div className="mgmt-event-card mini-preview">
                     <div className="mgmt-visual">
-                      <img src={imagePreview || 'https://placehold.co/400x200?text=Upload+Image'} alt="Preview" />
+                      <OptimizedImage src={imagePreview || 'https://placehold.co/400x200?text=Upload+Image'} alt="Preview" />
                       {newEvent.tag && (
                         <div className="preview-tag-overlay">{newEvent.tag}</div>
                       )}
@@ -1383,7 +1388,7 @@ const SuperAdmin = () => {
 
                     {/* Photo */}
                     <div className="wcard-photo">
-                      <img src={getImageUrl(member.image)} alt={member.name} />
+                      <OptimizedImage src={getImageUrl(member.image)} alt={member.name} />
                       {isEditing && (
                         <label className="wcard-photo-btn" title="Change Photo">
                           <Eye size={14} />
@@ -1606,7 +1611,7 @@ const SuperAdmin = () => {
 
                     {/* Photo */}
                     <div className="wcard-photo">
-                      <img src={getImageUrl(member.image)} alt={member.name} />
+                      <OptimizedImage src={getImageUrl(member.image)} alt={member.name} />
                       {isEditing && (
                         <label className="wcard-photo-btn" title="Change Photo">
                           <Eye size={14} />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { Phone, Award, Star } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 import { io } from 'socket.io-client';
 import API_URL, { getApiUrl, getImageUrl } from '../utils/api';
 
@@ -68,7 +69,7 @@ const Leaders = () => {
         <div className="card-accent-glow" />
         <div className="president-visual">
           <div className="photo-halo">
-            <img src={getImageUrl(president.image)} alt={president.name} className="president-img" />
+            <OptimizedImage src={getImageUrl(president.image)} alt={president.name} className="president-img" />
           </div>
           <div className="honor-badge">
             <Award size={20} />
@@ -100,7 +101,7 @@ const Leaders = () => {
             whileHover={{ y: -10 }}
           >
             <div className="leader-img-box">
-              <img src={getImageUrl(leader.image)} alt={leader.name} />
+              <OptimizedImage src={getImageUrl(leader.image)} alt={leader.name} />
               <div className="img-vignette" />
             </div>
             <div className="leader-meta">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { Heart, GraduationCap, Cross, HeartPulse, Star, Users } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 import { io } from 'socket.io-client';
 import API_URL, { getApiUrl, getImageUrl } from '../utils/api';
@@ -154,7 +155,7 @@ const Welfare = () => {
             >
               <div className="leader-visual">
                 <div className="photo-inner">
-                  <img src={getImageUrl(leader.image)} alt={leader.name} />
+                  <OptimizedImage src={getImageUrl(leader.image)} alt={leader.name} />
                 </div>
                 {leader.featured && <div className="featured-badge"><Users size={16} /></div>}
               </div>
@@ -186,8 +187,8 @@ const Welfare = () => {
                 viewport={{ once: true }}
               >
                 <div className="member-mini-visual">
-                  <img 
-                    src={getImageUrl(member.image) || 'https://placehold.co/50'} 
+                  <OptimizedImage 
+                    src={getImageUrl(member.image)} 
                     alt={member.name} 
                     className="member-photo-mini" 
                   />
