@@ -6,7 +6,7 @@
     "designation": "President",
     "designation_ta": "தலைவர்",
     "phone": "+91 9444171724",
-    "image": "",
+    "image": "/welfare/council-1.png",
     "featured": true,
     "group": "leadership"
   },
@@ -17,7 +17,7 @@
     "designation": "Vice President",
     "designation_ta": "துணைத் தலைவர்",
     "phone": "+91 7708576474",
-    "image": "",
+    "image": "/welfare/council-2.jpg",
     "group": "leadership"
   },
   {
@@ -27,7 +27,7 @@
     "designation": "Secretary",
     "designation_ta": "செயலாளர்",
     "phone": "+91 8489847161",
-    "image": "",
+    "image": "/welfare/council-3.jpeg",
     "group": "leadership"
   },
   {
@@ -37,7 +37,7 @@
     "designation": "Treasurer",
     "designation_ta": "பொருளாளர்",
     "phone": "+91 9150340768",
-    "image": "",
+    "image": "/welfare/council-4.jpg",
     "group": "leadership"
   },
   {
@@ -47,7 +47,7 @@
     "designation": "Social Media coordinator",
     "designation_ta": "சமூக ஊடக ஒருங்கிணைப்பாளர்",
     "phone": "+91 6380774723",
-    "image": "",
+    "image": "/welfare/council-5.jpg",
     "group": "leadership"
   }
 ]
