@@ -459,11 +459,12 @@ const SuperAdmin = () => {
         e.target.reset();
         fetchGallery(category);
       } else {
-        showNotification(t("Upload failed", "பதிவேற்றம் தோல்வியடைந்தது"), 'error');
+        const errData = await response.json().catch(() => ({}));
+        showNotification(t(`Upload failed: ${errData.message || 'Unknown error'}`, `பதிவேற்றம் தோல்வியடைந்தது: ${errData.message || 'அறியப்படாத பிழை'}`), 'error');
       }
     } catch (error) {
       console.error('Gallery upload error:', error);
-      showNotification(t("Server error", "சர்வர் பிழை"), 'error');
+      showNotification(t("Server error", "சர்வர் பிழை") + ": " + error.message, 'error');
     }
   };
 

@@ -426,16 +426,32 @@ app.post('/api/gallery/:category', upload.single('image'), async (req, res) => {
   try {
     const { category } = req.params;
     const { caption } = req.body;
+    
+    if (!req.file) {
+      return res.status(400).json({ message: 'No image file provided or upload failed' });
+    }
+
     const targetFile = category === 'michael' ? MICHAEL_GALLERY_FILE : RAPHAEL_GALLERY_FILE;
 
     const newPhoto = {
       id: Date.now(),
       caption: caption || '',
-      src: req.file ? req.file.path : '',
+      src: req.file.path, // Cloudinary URL
       timestamp: new Date().toISOString()
     };
 
-    const photos = await fs.readJson(targetFile);
+    // Ensure target file exists and is valid
+    let photos = [];
+    try {
+      if (await fs.pathExists(targetFile)) {
+        photos = await fs.readJson(targetFile);
+        if (!Array.isArray(photos)) photos = [];
+      }
+    } catch (readError) {
+      console.error(`Error reading ${targetFile}:`, readError);
+      photos = [];
+    }
+
     photos.push(newPhoto);
     await fs.writeJson(targetFile, photos, { spaces: 2 });
 
@@ -443,7 +459,11 @@ app.post('/api/gallery/:category', upload.single('image'), async (req, res) => {
     res.status(201).json(newPhoto);
   } catch (error) {
     console.error('Error adding gallery photo:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ 
+      message: 'Failed to add gallery photo', 
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 
