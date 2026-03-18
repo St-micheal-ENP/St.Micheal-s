@@ -64,6 +64,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Ensure data directory and file exist
 const ensureDataFile = async () => {
