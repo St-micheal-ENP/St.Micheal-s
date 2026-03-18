@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Tenor+Sans&family=Inter:wght@400;500;600&family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #8b0000;
+  --primary-light: #b03030;
+  --secondary: #d4af37;
+  --secondary-light: #f1d592;
+  --accent: #1a237e;
+  --text-main: #1a1a1a;
+  --text-muted: #555555;
+  --bg-main: #ffffff;
+  --bg-soft: #fcfaf5;
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(212, 175, 55, 0.2);
+  
+  --heading-font: 'Cinzel', serif;
+  --body-font: 'Tenor Sans', sans-serif;
+  --ui-font: 'Outfit', sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 30px rgba(139, 0, 0, 0.08);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --shadow-ultra: 0 25px 80px rgba(139, 0, 0, 0.15);
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Typography */
+:root {
+  --fs-xs: clamp(0.65rem, 0.6rem + 0.25vw, 0.75rem);
+  --fs-sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+  --fs-base: clamp(0.85rem, 0.8rem + 0.25vw, 1rem);
+  --fs-md: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --fs-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+  --fs-xl: clamp(1.75rem, 1.5rem + 1vw, 2.75rem);
+  --fs-display: clamp(2.25rem, 2rem + 2vw, 4.5rem);
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-main);
+  background: var(--bg-soft);
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: var(--fs-base);
+}
+
+h1 { font-size: var(--fs-display); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+h4 { font-size: var(--fs-md); }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: var(--ui-font);
+}
+
+.premium-card {
+  background: var(--bg-main);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  padding: clamp(1rem, 5vw, 2.5rem);
+}
+
+.premium-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d4af37, #8b0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-premium { box-shadow: var(--shadow-sm); }
+.shadow-ultra { box-shadow: var(--shadow-md); }
+
+.glass-morphism {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Base Responsive Container */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --shadow-md: 0 5px 15px rgba(139, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--secondary), var(--primary));
+  border-radius: 10px;
+  border: 2px solid white;
+}
+

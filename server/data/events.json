@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Annual Feast Celebration",
+    "title_ta": "ஆண்டுத் திருவிழா கொண்டாட்டம்",
+    "image": "/src/assets/Feast.jpeg",
+    "tag": "Major Festival",
+    "tag_ta": "பெரிய திருவிழா",
+    "description": "A grand celebration in honor of St. Michael the Archangel. The festival features special masses, traditional processions, and cultural events that bring the entire village together in faith and joy.",
+    "description_ta": "புனித மிக்கேல் அதிதூதரை சிறப்பிக்கும் பிரமாண்டமான கொண்டாட்டம். இந்தத் திருவிழாவில் சிறப்புத் திருப்பலிகள், பாரம்பரிய ஊர்வலங்கள் மற்றும் கலாச்சார நிகழ்வுகள் இடம்பெறுகின்றன."
+  },
+  {
+    "id": 2,
+    "title": "Flag Hoisting Ceremony",
+    "title_ta": "கொடியேற்றும் விழா",
+    "image": "/src/assets/Flag.png",
+    "tag": "Spiritual Journey",
+    "tag_ta": "ஆன்மீகப் பயணம்",
+    "description": "The auspicious beginning of the annual festival season. The flag of St. Michael is hoisted with great devotion, signaling the start of the ten-day spiritual journey.",
+    "description_ta": "ஆண்டுத் திருவிழா காலத்தின் மங்களகரமான ஆரம்பம். புனித மிக்கேலின் கொடி மிகுந்த பக்தியுடன் ஏற்றப்படுகிறது."
+  },
+  {
+    "id": 3,
+    "title": "Tuesday Special Mass",
+    "title_ta": "செவ்வாய்கிழமை சிறப்பு திருப்பலி",
+    "image": "/src/assets/Mass.jpeg",
+    "tag": "Weekly Devotion",
+    "tag_ta": "வாராந்திர வழிபாடு",
+    "description": "Special devotion to St. Michael every Tuesday. People flock to the church to seek blessings and offer thanks for the protective grace they have experienced.",
+    "description_ta": "ஒவ்வொரு செவ்வாய்கிழமையும் புனித மிக்கேலுக்கு அர்ப்பணிக்கப்பட்ட சிறப்பு வழிபாடு. மக்கள் ஆசீர்வாதங்களைத் தேடவும் நன்றி தெரிவிக்கவும் திரழ்கின்றனர்."
+  }
+]

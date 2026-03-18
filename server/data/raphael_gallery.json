@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "caption": "Archangel Raphael – The Divine Healer",
+    "src": "/uploads/static-r1.png",
+    "timestamp": "2026-03-18T00:00:00Z"
+  },
+  {
+    "id": 102,
+    "caption": "Archangel Raphael – Guide of Tobias",
+    "src": "/uploads/static-r2.png",
+    "timestamp": "2026-03-18T00:00:01Z"
+  },
+  {
+    "id": 103,
+    "caption": "Raphael Church – Sacred Grounds",
+    "src": "/uploads/static-r3.jpg",
+    "timestamp": "2026-03-18T00:00:02Z"
+  },
+  {
+    "id": 104,
+    "caption": "Archangel Raphael – Patron of Healing",
+    "src": "/uploads/static-r4.jpeg",
+    "timestamp": "2026-03-18T00:00:03Z"
+  },
+  {
+    "id": 105,
+    "caption": "Archangel Raphael – Festival Celebration",
+    "src": "/uploads/static-r5.jpeg",
+    "timestamp": "2026-03-18T00:00:04Z"
+  },
+  {
+    "id": 106,
+    "caption": "Archangel Raphael – Feast Day",
+    "src": "/uploads/static-r6.jpeg",
+    "timestamp": "2026-03-18T00:00:05Z"
+  }
+]

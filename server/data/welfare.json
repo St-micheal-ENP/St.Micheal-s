@@ -1,0 +1,53 @@
+[
+  {
+    "id": "leader_1",
+    "name": "Mr. Maria Micheal",
+    "name_ta": "திரு. மரியமிக்கேல்",
+    "designation": "President",
+    "designation_ta": "தலைவர்",
+    "phone": "+91 9444171724",
+    "image": "/uploads/1773753938742-CharityCouncil1.png",
+    "featured": true,
+    "group": "leadership"
+  },
+  {
+    "id": "leader_2",
+    "name": "Mr. Susai Micheal",
+    "name_ta": "திரு. சூசைமைக்கேல்",
+    "designation": "Vice President",
+    "designation_ta": "துணைத் தலைவர்",
+    "phone": "+91 7708576474",
+    "image": "/uploads/1773753947899-CharityCouncil2.jpg",
+    "group": "leadership"
+  },
+  {
+    "id": "leader_3",
+    "name": "Mr. Micheal Raj ",
+    "name_ta": "திரு. மைக்கேல் ராஜ்",
+    "designation": "Secretary",
+    "designation_ta": "செயலாளர்",
+    "phone": "+91 8489847161",
+    "image": "/uploads/1773753957000-CharityCouncil3.jpeg",
+    "group": "leadership"
+  },
+  {
+    "id": "leader_4",
+    "name": "Mr. Deva",
+    "name_ta": "திரு. தேவா",
+    "designation": "Treasurer",
+    "designation_ta": "பொருளாளர்",
+    "phone": "+91 9150340768",
+    "image": "/uploads/1773753966697-CharityCouncil4.jpg",
+    "group": "leadership"
+  },
+  {
+    "id": "leader_5",
+    "name": "Mr. Micheal Savary ",
+    "name_ta": "திரு. மிக்கேல் சவரி ",
+    "designation": "Social Media coordinator",
+    "designation_ta": "சமூக ஊடக ஒருங்கிணைப்பாளர்",
+    "phone": "+91 6380774723",
+    "image": "/uploads/1773753973879-CharityCouncil5.jpg",
+    "group": "leadership"
+  }
+]

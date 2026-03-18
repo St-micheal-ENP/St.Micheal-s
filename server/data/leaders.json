@@ -1,0 +1,48 @@
+[
+  {
+    "id": "vleader_1",
+    "name": "Mr. Savari Muthu",
+    "name_ta": "திரு. சவரி முத்து ",
+    "designation": "President",
+    "designation_ta": "தலைவர்",
+    "phone": "+91 9843498803",
+    "image": "/uploads/VillageLeaders1.png",
+    "isPrimary": true
+  },
+  {
+    "id": "vleader_2",
+    "name": "Mr. Innasimuthu",
+    "name_ta": "திரு. இன்னாசிமுத்து ",
+    "designation": "Vice President",
+    "designation_ta": "துணைத் தலைவர்",
+    "phone": "+91 9789190921",
+    "image": "/uploads/VillageLeaders2.png"
+  },
+  {
+    "id": "vleader_3",
+    "name": "Mr. Alex",
+    "name_ta": "திரு. அலெக்ஸ் ",
+    "designation": "Treasurer",
+    "designation_ta": "பொருளாளர்",
+    "phone": "+91 9751218463",
+    "image": "/uploads/VillageLeaders3.png"
+  },
+  {
+    "id": "vleader_4",
+    "name": "Mr. Kovil Pillai ",
+    "name_ta": "திரு. கோவில் பிள்ளை",
+    "designation": "Ambalaathar",
+    "designation_ta": "அம்பலார்",
+    "phone": " no",
+    "image": "/uploads/VillageLeaders4.png"
+  },
+  {
+    "id": "vleader_5",
+    "name": "Mr. Anthonisamy",
+    "name_ta": "திரு. அந்தோணிசாமி",
+    "designation": "Temple Upadeshiyar",
+    "designation_ta": "ஆலய உபதேசியார்",
+    "phone": "+91 8098953999",
+    "image": "/uploads/VillageLeaders5.png"
+  }
+]
