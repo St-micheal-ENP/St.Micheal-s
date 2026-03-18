@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import OptimizedImage from '../components/OptimizedImage';
+import { getImageUrl } from '../utils/api';
 
 const raphaelPhotos = [];
 
@@ -9,11 +10,6 @@ const RaphaelGallery = () => {
   const { t } = useLanguage();
   const [dynamicPhotos, setDynamicPhotos] = useState([]);
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-  const getImageUrl = (path) => {
-    if (!path) return '';
-    if (path.startsWith('http')) return path;
-    return `${API_URL}${path.startsWith('/') ? '' : '/'}${path}`;
-  };
 
   useEffect(() => {
     const fetchPhotos = async () => {

@@ -6,7 +6,7 @@
     "designation": "President",
     "designation_ta": "தலைவர்",
     "phone": "+91 9843498803",
-    "image": "/uploads/VillageLeaders1.png",
+    "image": "/leaders/VillageLeaders1.png",
     "isPrimary": true
   },
   {
@@ -16,7 +16,7 @@
     "designation": "Vice President",
     "designation_ta": "துணைத் தலைவர்",
     "phone": "+91 9789190921",
-    "image": "/uploads/VillageLeaders2.png"
+    "image": "/leaders/VillageLeaders2.png"
   },
   {
     "id": "vleader_3",
@@ -25,7 +25,7 @@
     "designation": "Treasurer",
     "designation_ta": "பொருளாளர்",
     "phone": "+91 9751218463",
-    "image": "/uploads/VillageLeaders3.png"
+    "image": "/leaders/VillageLeaders3.png"
   },
   {
     "id": "vleader_4",
@@ -34,7 +34,7 @@
     "designation": "Ambalaathar",
     "designation_ta": "அம்பலார்",
     "phone": " no",
-    "image": "/uploads/VillageLeaders4.png"
+    "image": "/leaders/VillageLeaders4.png"
   },
   {
     "id": "vleader_5",
@@ -43,6 +43,6 @@
     "designation": "Temple Upadeshiyar",
     "designation_ta": "ஆலய உபதேசியார்",
     "phone": "+91 8098953999",
-    "image": "/uploads/VillageLeaders5.png"
+    "image": "/leaders/VillageLeaders5.png"
   }
 ]
