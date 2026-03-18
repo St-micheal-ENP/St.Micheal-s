@@ -485,6 +485,18 @@ app.delete('/api/gallery/:category/:id', async (req, res) => {
   }
 });
 
+// ERROR HANDLING MIDDLEWARE
+app.use((err, req, res, next) => {
+  console.error('Global Error Handler:', err);
+  
+  // Standardize error response
+  res.status(err.status || 500).json({
+    message: err.message || 'An unexpected error occurred',
+    error: err.code || 'INTERNAL_SERVER_ERROR',
+    details: process.env.NODE_ENV === 'development' ? err.stack : undefined
+  });
+});
+
 httpServer.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

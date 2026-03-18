@@ -459,7 +459,13 @@ const SuperAdmin = () => {
         e.target.reset();
         fetchGallery(category);
       } else {
-        const errData = await response.json().catch(() => ({}));
+        const text = await response.text();
+        let errData = {};
+        try {
+          errData = JSON.parse(text);
+        } catch (e) {
+          errData = { message: text.substring(0, 100) || 'Unknown error' };
+        }
         showNotification(t(`Upload failed: ${errData.message || 'Unknown error'}`, `பதிவேற்றம் தோல்வியடைந்தது: ${errData.message || 'அறியப்படாத பிழை'}`), 'error');
       }
     } catch (error) {
