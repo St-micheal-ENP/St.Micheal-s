@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import OptimizedImage from '../components/OptimizedImage';
 
 const michaelPhotos = [];
 
@@ -54,9 +55,10 @@ const MichaelGallery = () => {
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <img 
-              src={getImageUrl(photo.src)} 
-              alt={photo.caption} 
+            <OptimizedImage
+              src={getImageUrl(photo.src)}
+              alt={photo.caption}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
             <div className="mgallery-overlay">
               <p>{t(photo.caption, photo.caption)}</p>

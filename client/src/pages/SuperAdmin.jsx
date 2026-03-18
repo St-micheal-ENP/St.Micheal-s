@@ -6,6 +6,7 @@ import { io } from 'socket.io-client';
 import API_URL, { getApiUrl, getImageUrl } from '../utils/api';
 import { useNotification } from '../context/NotificationContext';
 import churchLogo from '../assets/icon.png';
+import OptimizedImage from '../components/OptimizedImage';
 
 const SuperAdmin = () => {
   const { t } = useLanguage();
@@ -595,21 +596,16 @@ const SuperAdmin = () => {
 
   const handleUpdateMember = async (id, updatedData, isFile = false) => {
     try {
-      let body;
-      const options = { method: 'PUT' };
-      
-      if (isFile) {
-        body = new FormData();
-        Object.keys(updatedData).forEach(key => {
-          if (updatedData[key] !== undefined) body.append(key, updatedData[key]);
-        });
-      } else {
-        body = JSON.stringify(updatedData);
-        options.headers = { 'Content-Type': 'application/json' };
-      }
-      options.body = body;
+      const formData = new FormData();
+      Object.keys(updatedData).forEach(key => {
+        if (updatedData[key] !== undefined) formData.append(key, updatedData[key]);
+      });
 
-      const response = await fetch(getApiUrl(`/api/welfare/${id}`), options);
+      const response = await fetch(getApiUrl(`/api/welfare/${id}`), {
+        method: 'PUT',
+        body: formData
+      });
+      
       if (response.ok) {
         fetchWelfare();
         // Clear local edits for this leader on success
@@ -651,21 +647,16 @@ const SuperAdmin = () => {
 
   const handleUpdateVillageLeader = async (id, updatedData, isFile = false) => {
     try {
-      let body;
-      const options = { method: 'PUT' };
-      
-      if (isFile) {
-        body = new FormData();
-        Object.keys(updatedData).forEach(key => {
-          if (updatedData[key] !== undefined) body.append(key, updatedData[key]);
-        });
-      } else {
-        body = JSON.stringify(updatedData);
-        options.headers = { 'Content-Type': 'application/json' };
-      }
-      options.body = body;
+      const formData = new FormData();
+      Object.keys(updatedData).forEach(key => {
+        if (updatedData[key] !== undefined) formData.append(key, updatedData[key]);
+      });
 
-      const response = await fetch(getApiUrl(`/api/leaders/${id}`), options);
+      const response = await fetch(getApiUrl(`/api/leaders/${id}`), {
+        method: 'PUT',
+        body: formData
+      });
+
       if (response.ok) {
         fetchVillageLeaders();
         if (!isFile) {
@@ -1342,7 +1333,7 @@ const SuperAdmin = () => {
                 {events.map(event => (
                   <div key={event.id} className="mgmt-event-card shadow-premium">
                     <div className="mgmt-visual">
-                      <img src={getImageUrl(event.image)} alt={event.title} />
+                      <OptimizedImage src={getImageUrl(event.image)} alt={event.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       <div className="card-overlay-actions">
                         <button onClick={() => handleDeleteEvent(event.id)} className="delete-btn-float" title="Delete">
                           <Trash2 size={16} />
@@ -1826,7 +1817,7 @@ const SuperAdmin = () => {
                       {michaelGallery.map((photo) => (
                         <div key={photo.id} className="gallery-admin-card shadow-premium">
                           <div className="gallery-admin-visual">
-                            <img src={getImageUrl(photo.src)} alt={photo.caption} />
+                            <OptimizedImage src={getImageUrl(photo.src)} alt={photo.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <button onClick={() => handleDeleteGalleryPhoto('michael', photo.id)} className="delete-photo-btn shadow-premium">
                               <Trash2 size={16} />
                             </button>
@@ -1874,7 +1865,7 @@ const SuperAdmin = () => {
                       {raphaelGallery.map((photo) => (
                         <div key={photo.id} className="gallery-admin-card shadow-premium" style={{ borderColor: '#00640022' }}>
                           <div className="gallery-admin-visual">
-                            <img src={getImageUrl(photo.src)} alt={photo.caption} />
+                            <OptimizedImage src={getImageUrl(photo.src)} alt={photo.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <button onClick={() => handleDeleteGalleryPhoto('raphael', photo.id)} className="delete-photo-btn shadow-premium">
                               <Trash2 size={16} />
                             </button>

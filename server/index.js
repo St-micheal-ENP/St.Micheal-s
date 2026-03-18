@@ -8,6 +8,8 @@ import path from 'path';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { v2 as cloudinary } from 'cloudinary';
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
 
 dotenv.config();
 
@@ -31,16 +33,21 @@ const LEADERS_FILE = path.join(__dirname, 'data', 'leaders.json');
 const SHARING_FILE = path.join(__dirname, 'data', 'sharing.json');
 const MICHAEL_GALLERY_FILE = path.join(__dirname, 'data', 'michael_gallery.json');
 const RAPHAEL_GALLERY_FILE = path.join(__dirname, 'data', 'raphael_gallery.json');
-const UPLOADS_DIR = path.join(__dirname, 'uploads');
 
-// Multer config
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, UPLOADS_DIR);
+// Cloudinary config
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+// Multer storage with Cloudinary
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'st-michael-church',
+    allowed_formats: ['jpg', 'png', 'jpeg', 'webp'],
   },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
 });
 
 const upload = multer({ storage });
@@ -57,7 +64,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use(bodyParser.json());
-app.use('/uploads', express.static(UPLOADS_DIR));
 
 // Ensure data directory and file exist
 const ensureDataFile = async () => {
@@ -85,9 +91,6 @@ const ensureDataFile = async () => {
   }
   if (!(await fs.pathExists(RAPHAEL_GALLERY_FILE))) {
     await fs.writeJson(RAPHAEL_GALLERY_FILE, []);
-  }
-  if (!(await fs.pathExists(UPLOADS_DIR))) {
-    await fs.ensureDir(UPLOADS_DIR);
   }
 };
 
@@ -212,7 +215,7 @@ app.post('/api/events', upload.single('image'), async (req, res) => {
       tag_ta,
       description,
       description_ta,
-      image: req.file ? `/uploads/${req.file.filename}` : ''
+      image: req.file ? req.file.path : ''
     };
     
     const events = await fs.readJson(EVENTS_FILE);
@@ -253,7 +256,7 @@ app.post('/api/welfare', upload.single('image'), async (req, res) => {
       designation: designation || '',
       designation_ta: designation_ta || '',
       group: group || 'general',
-      image: req.file ? `/uploads/${req.file.filename}` : ''
+      image: req.file ? req.file.path : ''
     };
     
     const members = await fs.readJson(WELFARE_FILE);
@@ -273,7 +276,7 @@ app.put('/api/welfare/:id', upload.single('image'), async (req, res) => {
     const { id } = req.params;
     const updateData = { ...req.body };
     if (req.file) {
-      updateData.image = `/uploads/${req.file.filename}`;
+      updateData.image = req.file.path;
     }
 
     const members = await fs.readJson(WELFARE_FILE);
@@ -324,7 +327,7 @@ app.put('/api/leaders/:id', upload.single('image'), async (req, res) => {
     const { id } = req.params;
     const updateData = { ...req.body };
     if (req.file) {
-      updateData.image = `/uploads/${req.file.filename}`;
+      updateData.image = req.file.path;
     }
 
     const leaders = await fs.readJson(LEADERS_FILE);
@@ -368,7 +371,7 @@ app.post('/api/sharing', upload.single('image'), async (req, res) => {
       name,
       email: email || '',
       message,
-      photo: req.file ? `/uploads/${req.file.filename}` : '',
+      photo: req.file ? req.file.path : '',
       date: new Date().toLocaleDateString()
     };
     
@@ -427,7 +430,7 @@ app.post('/api/gallery/:category', upload.single('image'), async (req, res) => {
     const newPhoto = {
       id: Date.now(),
       caption: caption || '',
-      src: req.file ? `/uploads/${req.file.filename}` : '',
+      src: req.file ? req.file.path : '',
       timestamp: new Date().toISOString()
     };
 
