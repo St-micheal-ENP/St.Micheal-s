@@ -20,7 +20,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: [process.env.CORS_ORIGIN || "http://localhost:5173", "http://localhost:5174", "http://localhost:5175"],
+    origin: [process.env.CORS_ORIGIN || "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://st-micheal-s.vercel.app"],
     methods: ["GET", "POST", "DELETE", "PUT"]
   }
 });
@@ -54,7 +54,7 @@ const upload = multer({ storage });
 
 // Middleware
 app.use(cors({
-  origin: [process.env.CORS_ORIGIN || "http://localhost:5173", "http://localhost:5174", "http://localhost:5175"],
+  origin: [process.env.CORS_ORIGIN || "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://st-micheal-s.vercel.app"],
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true
 }));
