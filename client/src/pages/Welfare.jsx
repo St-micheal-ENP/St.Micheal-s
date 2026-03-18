@@ -187,7 +187,7 @@ const Welfare = () => {
               >
                 <div className="member-mini-visual">
                   <img 
-                    src={getImageUrl(member.image) || 'https://via.placeholder.com/50'} 
+                    src={getImageUrl(member.image) || 'https://placehold.co/50'} 
                     alt={member.name} 
                     className="member-photo-mini" 
                   />

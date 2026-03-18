@@ -1313,7 +1313,7 @@ const SuperAdmin = () => {
                   </div>
                   <div className="mgmt-event-card mini-preview">
                     <div className="mgmt-visual">
-                      <img src={imagePreview || 'https://via.placeholder.com/400x200?text=Upload+Image'} alt="Preview" />
+                      <img src={imagePreview || 'https://placehold.co/400x200?text=Upload+Image'} alt="Preview" />
                       {newEvent.tag && (
                         <div className="preview-tag-overlay">{newEvent.tag}</div>
                       )}
